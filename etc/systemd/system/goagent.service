@@ -1,0 +1,13 @@
+[Unit]
+Description=GoAgent
+Documentation=https://code.google.com/p/goagent/
+DefaultDependencies=yes
+After=network-online.target
+
+[Service]
+Environment=PWD=/home/wx672/goagent/local
+ExecStart=/usr/bin/python2.7 /home/wx672/goagent/local/proxy.py
+ExecStop=/usr/bin/pkill --signal SIGKILL python2.7
+
+[Install]
+WantedBy=multi-user.target
